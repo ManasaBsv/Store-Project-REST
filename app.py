@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Resource,Api,reqparse
+from secret import secret
 
 
 from resources.item import Item,ItemList
@@ -12,7 +13,7 @@ app = Flask(__name__)
 
 
 # first set the secret key
-app.secret_key = 'brocode'
+app.secret_key = secret
 
 #Configurations for SQLAlchemy
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
